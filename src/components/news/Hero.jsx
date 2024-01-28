@@ -1,18 +1,7 @@
 import Link from "next/link";
 import React from "react";
-
+import dateString from "@/utility/DateToString";
 const Hero = ({ data }) => {
-  const dateString = (str) => {
-    const originalDate = new Date(str);
-    // Convert to a formatted string
-    const formattedDate = originalDate.toLocaleDateString("en-US", {
-      //   year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-    return formattedDate;
-  };
-  console.log(data);
   return (
     <div className="max-w-screen-xl p-5 mx-auto text-gray-100">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2">
