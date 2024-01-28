@@ -26,7 +26,7 @@ const AvatarMenue = () => {
   }, []);
 
   return (
-    <div className="relative border-t lg:border-none z-50">
+    <div className="relative z-50 border-t lg:border-none">
       <div className="">
         <button
           ref={profileRef}
@@ -64,7 +64,7 @@ const AvatarMenue = () => {
     </div>
   );
 };
-
+import logo from "../../../public/images/logo.svg";
 export default function AppNavBar(props) {
   const [state, setState] = useState(false);
   const [keyword, setKeyword] = useState("");
@@ -89,12 +89,7 @@ export default function AppNavBar(props) {
       >
         <div className="flex items-center justify-between py-3 lg:py-5 lg:block">
           <Link href="/">
-            <img
-              src="https://www.floatui.com/logo.svg"
-              width={120}
-              height={50}
-              alt="Float UI logo"
-            />
+            <img src={logo} width={120} height={50} alt="logo" />
           </Link>
           <div className="lg:hidden">
             <button
@@ -180,7 +175,7 @@ export default function AppNavBar(props) {
             ) : (
               <Link
                 href={"/user/login"}
-                className="px-3 py-2 bg-gray-700 text-white"
+                className="px-3 py-2 text-white bg-gray-700"
               >
                 Login
               </Link>

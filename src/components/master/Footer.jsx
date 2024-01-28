@@ -29,21 +29,21 @@ const Footer = (props) => {
   ];
   const social = props?.data["socials"][0];
   return (
-    <footer className="text-gray-500 bg-white px-4 py-5 max-w-screen-xl mx-auto md:px-8">
-      <div className="gap-6 justify-between md:flex">
+    <footer className="max-w-screen-xl px-4 py-5 mx-auto text-gray-500 bg-white md:px-8">
+      <div className="justify-between gap-6 md:flex">
         <div className="flex-1">
           <div className="max-w-xs">
-            <img src="https://www.floatui.com/logo.svg" className="w-32" />
+            <img src="../../../public/images/logo.svg" className="w-32" />
             <p className="leading-relaxed mt-2 text-[15px]">
               {social["about"]}
             </p>
           </div>
           <FooterSubscribe />
         </div>
-        <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
+        <div className="items-center justify-between flex-1 mt-10 space-y-6 sm:flex md:space-y-0 md:mt-0">
           {footerNavs.map((item, idx) => (
             <ul className="space-y-4" key={idx}>
-              <h4 className="text-gray-800 font-medium">{item?.label}</h4>
+              <h4 className="font-medium text-gray-800">{item?.label}</h4>
               {item.items.map((el, idx) =>
                 item?.label === "Recommended" ? (
                   idx < 4 && (
@@ -71,31 +71,31 @@ const Footer = (props) => {
           ))}
         </div>
       </div>
-      <div className="mt-8 py-6 border-t items-center justify-between sm:flex">
+      <div className="items-center justify-between py-6 mt-8 border-t sm:flex">
         <div className="mt-4 sm:mt-0">
-          &copy; 2022 Float UI All rights reserved.
+          &copy; 2022 News All rights reserved.
         </div>
         <div className="mt-6 sm:mt-0">
           <ul className="flex items-center space-x-4">
-            <li className="w-10 h-10 border rounded-full flex items-center justify-center">
+            <li className="flex items-center justify-center w-10 h-10 border rounded-full">
               <a href={social["facebook"]}>
                 <FacebookIcon />
               </a>
             </li>
 
-            <li className="w-10 h-10 border rounded-full flex items-center justify-center">
+            <li className="flex items-center justify-center w-10 h-10 border rounded-full">
               <a href={social["youtube"]}>
                 <YoutubeIcon />
               </a>
             </li>
 
-            <li className="w-10 h-10 border rounded-full flex items-center justify-center">
+            <li className="flex items-center justify-center w-10 h-10 border rounded-full">
               <a href={social["twitter"]}>
                 <TwitterIcon />
               </a>
             </li>
 
-            <li className="w-10 h-10 border rounded-full flex items-center justify-center">
+            <li className="flex items-center justify-center w-10 h-10 border rounded-full">
               <a href={social["linkedin"]}>
                 <LinkedinIcon />
               </a>

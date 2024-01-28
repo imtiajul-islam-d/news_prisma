@@ -1,17 +1,17 @@
 import React from "react";
 import avatar from "../../../public/images/avatar.png";
+import CommentForm from "./CommentForm";
 const CommentList = ({ comment }) => {
-  console.log(comment);
   return (
-    <div className="mt-4 border border-t px-3 sm:px-5 py-5">
+    <div className="px-3 py-5 mt-4 border border-t sm:px-5">
       <h3 className="font-medium">Comments</h3>
       <div>
         {comment?.map((item, idx) => (
-          <div className="border p-3 my-2" key={idx}>
+          <div className="p-3 my-2 border" key={idx}>
             <div className="flex items-center">
               <img
                 src={"../../../public/images/avatar.png"}
-                className="h-10 w-10 ring rounded-full mr-2"
+                className="w-10 h-10 mr-2 rounded-full ring"
                 alt=""
               />
               <span className="text-xl">{item?.users?.firstName}</span>
@@ -22,7 +22,7 @@ const CommentList = ({ comment }) => {
           </div>
         ))}
       </div>
-      <form></form>
+      <CommentForm comment={comment} />
     </div>
   );
 };
