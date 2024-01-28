@@ -21,7 +21,6 @@ async function getData(keyword) {
 const Page = async (props) => {
   let keyword = props.searchParams["keyword"];
   const data = await getData(keyword);
-  console.log(data);
   return (
     <PlainLayOut>
       <div className="mt-4 max-w-screen-xl px-3 sm:px-5 mx-auto">

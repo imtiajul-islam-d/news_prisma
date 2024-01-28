@@ -1,7 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
 const NewsDetails = ({ data }) => {
-  console.log(data);
   return (
     <section>
       <div className=" px-3 sm:px-5">

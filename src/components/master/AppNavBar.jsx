@@ -9,15 +9,13 @@ import {
   YoutubeIcon,
 } from "@/lib/social";
 import Link from "next/link";
+import Cookies from "js-cookie";
 const AvatarMenue = () => {
   const [state, setState] = useState(false);
   const profileRef = useRef();
-
   const navigation = [
     { title: "Dashboard", path: "javascript:void(0)" },
-    { title: "Analytics", path: "javascript:void(0)" },
     { title: "Profile", path: "javascript:void(0)" },
-    { title: "Settings", path: "javascript:void(0)" },
   ];
 
   useEffect(() => {
@@ -67,9 +65,18 @@ const AvatarMenue = () => {
 export default function AppNavBar(props) {
   const [state, setState] = useState(false);
   const [keyword, setKeyword] = useState("");
+  const [login, setLogin] = useState(false);
+
   // Replace javascript:void(0) paths with your paths
   const socials = props.data["socials"][0];
   const submenuNav = props.data["categories"];
+  useEffect(() => {
+    if (Cookies.get("token")) {
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }
+  }, []);
   return (
     <header className="text-base lg:text-sm">
       <div
@@ -165,7 +172,16 @@ export default function AppNavBar(props) {
                 <LinkedinIcon />
               </a>
             </li>
-            <AvatarMenue />
+            {login ? (
+              <AvatarMenue />
+            ) : (
+              <Link
+                href={"/user/login"}
+                className="px-3 py-2 bg-gray-700 text-white"
+              >
+                Login
+              </Link>
+            )}
           </ul>
         </div>
       </div>

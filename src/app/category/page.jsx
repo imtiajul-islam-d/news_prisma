@@ -21,7 +21,6 @@ async function getData(id) {
 const Page = async (props) => {
   let id = props.searchParams["id"];
   const data = await getData(id);
-  console.log(data);
   return (
     <PlainLayOut>
       <div className="mt-4 max-w-screen-xl px-3 sm:px-5 mx-auto">

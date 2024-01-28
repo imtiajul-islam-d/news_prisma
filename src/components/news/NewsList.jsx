@@ -1,7 +1,6 @@
 import dateString from "@/utility/DateToString";
 import Link from "next/link";
 const NewsList = ({ latest }) => {
-  console.log(latest);
   return (
     <div>
       <div className="max-w-screen-xl mx-auto text-gray-100">
