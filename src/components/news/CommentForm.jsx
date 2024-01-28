@@ -31,7 +31,6 @@ const CommentForm = ({ comment }) => {
       const options = { method: "POST", body: JSON.stringify(data) };
       let res = await (await fetch("/api/comments/manage", options)).json();
       setSubmit(false);
-      console.log(res);
       if (res["status"] === "success") {
         SuccessToast("Comment posted");
         setData({ ...data, descriptions: "" });
