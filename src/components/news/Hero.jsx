@@ -6,7 +6,7 @@ const Hero = ({ data }) => {
     const originalDate = new Date(str);
     // Convert to a formatted string
     const formattedDate = originalDate.toLocaleDateString("en-US", {
-      year: "numeric",
+      //   year: "numeric",
       month: "short",
       day: "numeric",
     });
