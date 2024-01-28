@@ -54,9 +54,12 @@ const AvatarMenue = () => {
             </a>
           </li>
         ))}
-        <button className="block w-full py-3 text-justify text-gray-600 border-t hover:text-gray-900 lg:hover:bg-gray-50 lg:p-3">
+        <a
+          href="/api/user/login"
+          className="block w-full py-3 text-justify text-gray-600 border-t hover:text-gray-900 lg:hover:bg-gray-50 lg:p-3"
+        >
           Logout
-        </button>
+        </a>
       </ul>
     </div>
   );

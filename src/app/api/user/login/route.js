@@ -28,3 +28,9 @@ export async function POST(req, res) {
     return NextResponse.json({ status: "failed", data: error.toString() });
   }
 }
+export async function GET(req, res) {
+  let expireDuration = new Date(Date.now() - 24 * 60 * 60 * 1000);
+  const resp = NextResponse.redirect(new URL("/", req.url));
+  resp.cookies.set("token", "", { expires: expireDuration });
+  return resp;
+}
