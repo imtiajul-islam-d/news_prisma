@@ -8,7 +8,6 @@ import {
 } from "@/lib/social";
 
 const Footer = (props) => {
-  console.log(props?.data["categories"]);
   const footerNavs = [
     {
       label: "Recommended",

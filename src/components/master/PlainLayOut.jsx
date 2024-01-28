@@ -19,7 +19,6 @@ async function getData() {
 
 const PlainLayOut = async ({ children }) => {
   const data = await getData();
-  // console.log(data);
   return (
     <>
       <AppNavBar data={data} />

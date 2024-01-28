@@ -26,7 +26,7 @@ const AvatarMenue = () => {
   }, []);
 
   return (
-    <div className="relative border-t lg:border-none">
+    <div className="relative border-t lg:border-none z-50">
       <div className="">
         <button
           ref={profileRef}
@@ -67,7 +67,6 @@ export default function AppNavBar(props) {
 
   // Replace javascript:void(0) paths with your paths
   const socials = props.data["socials"][0];
-  // console.log(socials);
   const submenuNav = props.data["categories"];
   //  [
   //   { title: "Overview", path: "javascript:void(0)" },

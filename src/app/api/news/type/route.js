@@ -9,11 +9,14 @@ export async function GET(req, res) {
       select: {
         id: true,
         title: true,
+        keywords: true,
         short_des: true,
         img1: true,
         img2: true,
         img3: true,
         img4: true,
+        updatedAt: true,
+        catID: true,
       },
     });
     return NextResponse.json({ status: "success", data: result });
