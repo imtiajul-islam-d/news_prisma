@@ -4,7 +4,7 @@ import React from "react";
 
 const PopularNewsList = ({ popular }) => {
   return (
-    <section className="max-w-screen-xl sm:px-5 mx-auto px-3">
+    <section className="max-w-screen-xl mx-auto ">
       <div className="grid gap-3 sm:gap-5 grid-cols-1">
         {popular?.map((item, idx) => (
           <Link

@@ -14,6 +14,9 @@ export async function GET(req, res) {
         img2: true,
         img3: true,
         img4: true,
+        updatedAt: true,
+        catID: true,
+        keywords: true,
       },
     });
     return NextResponse.json({ status: "success", data: result });

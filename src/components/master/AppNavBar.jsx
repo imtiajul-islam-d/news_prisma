@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+
 import SearchForm from "@/utility/SearchForm";
 import {
   FacebookIcon,
@@ -7,6 +8,7 @@ import {
   TwitterIcon,
   YoutubeIcon,
 } from "@/lib/social";
+import Link from "next/link";
 const AvatarMenue = () => {
   const [state, setState] = useState(false);
   const profileRef = useRef();
@@ -64,17 +66,10 @@ const AvatarMenue = () => {
 
 export default function AppNavBar(props) {
   const [state, setState] = useState(false);
-
+  const [keyword, setKeyword] = useState("");
   // Replace javascript:void(0) paths with your paths
   const socials = props.data["socials"][0];
   const submenuNav = props.data["categories"];
-  //  [
-  //   { title: "Overview", path: "javascript:void(0)" },
-  //   { title: "Integration", path: "javascript:void(0)" },
-  //   { title: "Billing", path: "javascript:void(0)" },
-  //   { title: "Transactions", path: "javascript:void(0)" },
-  //   { title: "Plans", path: "javascript:void(0)" },
-  // ];
   return (
     <header className="text-base lg:text-sm">
       <div
@@ -83,14 +78,14 @@ export default function AppNavBar(props) {
         }`}
       >
         <div className="flex items-center justify-between py-3 lg:py-5 lg:block">
-          <a href="javascript:void(0)">
+          <Link href="/">
             <img
               src="https://www.floatui.com/logo.svg"
               width={120}
               height={50}
               alt="Float UI logo"
             />
-          </a>
+          </Link>
           <div className="lg:hidden">
             <button
               className="text-gray-500 hover:text-gray-800"
@@ -132,7 +127,7 @@ export default function AppNavBar(props) {
           }`}
         >
           <ul className="items-center space-y-6 lg:flex lg:space-x-6 lg:space-y-0">
-            <SearchForm />
+            <SearchForm keyword={keyword} setKeyword={setKeyword} />
             {/* social links */}
             {/* facebook */}
             <li>
